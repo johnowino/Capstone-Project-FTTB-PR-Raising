@@ -46,12 +46,15 @@
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
@@ -90,10 +93,11 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
@@ -101,11 +105,6 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>System.CodeDom</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Data_Entry_Test" sap:VirtualizedContainerService.HintSize="716,15765.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -121,11 +120,7 @@
       <Variable x:TypeArguments="x:String" Default="01-1001-0000-91210-000-00000-00" Name="SfcAccountingFlexField" />
       <Variable x:TypeArguments="x:String" Default="[Datetime.Now.AddYears(2).ToString(&quot;dd-MM-yyyy&quot;)]" Name="NeedByDate" />
       <Variable x:TypeArguments="x:String" Default="FY24_0117_FTTB Rollout_01" Name="ProjectNo" />
-      <Variable x:TypeArguments="x:String" Name="ExpenditureDate">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Now.ToString(&quot;dd-MM-yyyy&quot;)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[Now.ToString(&quot;dd-MM-yyyy&quot;)]" Name="ExpenditureDate" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -606,7 +601,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?region=/oracle/apps/icx/por/req/webui/ShoppingCartPopupRN&amp;bypassPageCounterIncr=Y&amp;isPopupRegion=Y&amp;popupLevel=0&amp;popupId=ShoppingCartPopup&amp;retainAM=Y&amp;reqHdrID=-1&amp;_ti=1474497867&amp;oapc=78&amp;oas=luFyRywreoH6-Wj1rjsyKw.." CvElementArea="337, 406, 181, 21" CvType="InputBox" DesignTimeRectangle="336, 406, 180, 21" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Safaricom House'" FullSelectorArgument="&lt;webctrl id='iframeShoppingCartPopup' tag='IFRAME' /&gt;&lt;webctrl parentid='ReqHdrMCL' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='DeliverToLocation' tableRow='4' tag='INPUT' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl id='iframeShoppingCartPopup' tag='IFRAME' /&gt;&lt;webctrl parentid='ReqHdrMCL' tag='TABLE' /&gt;&lt;webctrl id='DeliverToLocation' type='text' tag='INPUT' class='x8' aaname='' /&gt;" Guid="78f9fc84-70aa-4e06-8425-6a37fcd92cea" InformativeScreenshot="36da2a86f736c56251e7171a61c6dd78.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oracle iProcurement: Shop' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvTextArea="117, 410, 211, 12" CvTextArgument="Where do they need to be delivered?" CvType="Text" DesignTimeRectangle="107, 410, 220, 14" FriendlyName="'* Where do'" FullSelectorArgument="&lt;webctrl id='iframeShoppingCartPopup' tag='IFRAME' /&gt;&lt;webctrl parentid='ReqHdrMCL' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframeShoppingCartPopup' tag='IFRAME' /&gt;&lt;webctrl parentid='ReqHdrMCL' tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='xc' aaname=' Where do they need to be delivered?' check:innerText='* Where do they need to be delivered?' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOAAAAASCAYAAABCd9LzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQjSURBVHhe7Zg7chsxDIbT+HwqfJOMdYIUPoHUuvAFPGrcp/VIM25SuIvlyjdQxZAiQOIHSO5DshUnLL6xpAXx+AHsyvp2OBxc5N3d3+7cj93B/bzbuau73+6w++Wubl/ca7LpdDrnJC/g24u7/u4Xz/Ds7t/wUKfTOQ/iCUikReyL1+l8NGoB49fQ9PTrXz87nQ/F/A8YFu/68d29Pj5Xl3D/sHSLxdJt+An5tnHLxaL42fJh77arcG3ttsLH57J165Dfalu4NsTebW449/Da+7nZuL2x+xqY3im2q/q1Oh+hy3ifMF9Pa/964dZP1u5TMPFp9hK4B/YJeMcLJ18rdBB6HwgLp22+8gJi7v/2Ag4tZ52/aAEvDewGzV2qgWoSudr/AcfATzwa6CgAAZ/FQPx6neywybHxdE0Irs9BUUS+0yjSU9mz8j6Of/MCQsxK89Am5MxD4f0dhdRnWeAI34zMYItvBxwLznsNNkmrYf+Rui65P0uvZWXJxE1Unh+jU85b6iJjtPKWiBrYl5iHoTk55iYXAJbBo3Qf8jd27qSftZ81fV2iZ2HeAopB2XNifrizEPJ6HgAohJehdMdQi52LQb+6mAw3HJvCfvEc+kQ/qrnJL51VDQVbWVex8a28J/pv6UJ20Yfyn+JGdF7jddJ+qY/Q/1LeSLQjH1R7igfnSnNS8h/tiroP+pM5NvTlPKtnM/Fctg3MXEBRNCUQAubESgVxc7AYEI/fV67pgeT3plhtBwIXBmlwKDgHHjR+L/1izdh8GbMQPzHTf0MXrSEuFYLXpuhkbWuzgLpIH9oOfY6eE5VjtpvpL9DQ1+hZ0Sj69KT6IrMXkAPDVxpO1D+GOcFgiwVJIeh1SAyItkYIKk5jmqkFaw6yZ+oCUqPAF8XUuXGcqJf3Y3KTzPTf0EVraAZGgNem6KTzFr6e27pkdLyZc6JzPL73eTxJ3Sf4Ez41wZfRs6iR1YeZvYAwEHpgjuSkWkNsihWYa83hFXBuqZmyuQUxqoPVzh39FgZWQjnF/xFEw4CZ/hu6xPxzvPELOEUna5t9DeiSILvkA32OnhOTY/S7vMG6R/sLNPSNdYp4jVkqMX8BWbCAEDcmjwVgQapZkDA2y4qEZ+vDRHZ8lmKw38FBEzRzb+VrGsE5yfOauf7xHNRHdnjnL2lm9RyvU64N+ki2bV0y0Y7i8U2U48G5KbrzdeHL2J0wd+pmz7GwPtQjf37SAmrRIzG5nFAAC7KNTGdUklaIABVDYKESYTf0K2hBmAQ1KsbSuWPjpCYBfcfkmPUn+Cn+67rkWhu/ggZ4mDzse5xOnPe0X4ctwu4cv4LSdf6s1o+mv0Rj7uSMFH8FpbMF/U5YwM5UYsMrw9/5L+kL+BkUniydTqAvYKdzQfoCdjoXpC9gp3MxDu4PnFBWh6R9XxgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -779,7 +774,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="For FTTB Rollout, the calue is Capex Services.&#xD;&#xA;&#xD;&#xA;Store in config file/assets" ClickBeforeMode="Single" DisplayName="Type Into 'Expenditure Type'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="558,284.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[ExpenditureType]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="For FTTB Rollout, the calue is Capex Services.&#xA;&#xA;Store in config file/assets" ClickBeforeMode="Single" DisplayName="Type Into 'Expenditure Type'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="558,284.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[ExpenditureType]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?region=/oracle/apps/icx/por/req/webui/EditSingleLineRN&amp;bypassPageCounterIncr=Y&amp;isPopupRegion=Y&amp;popupLevel=0&amp;popupId=singlepopup&amp;retainAM=Y&amp;reqLineId=&amp;_ti=2011580170&amp;oapc=11&amp;oas=b7l3iMfwVRdmuNuNUwp0Pw.." CvTextArea="832, 712, 85, 14" CvTextArgument="Capex Services" CvType="Text" DesignTimeRectangle="830, 710, 121, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Capex Services'" FullSelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='BillingTblRN:Content' tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='BillingTblRN:ExpenditureType:0' tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='BillingTblRN:Content' tag='TABLE' /&gt;&lt;webctrl id='BillingTblRN:ExpenditureType:0' type='text' tag='INPUT' class='x8' aaname='Expenditure Type' /&gt;" Guid="f8991366-1721-4ff2-980c-e1e16f63e33d" InformativeScreenshot="4e6f2316a02cc2de2360eebef734302c.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit and Submit Requisition' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -795,7 +790,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="For TES FTTB Rollout, we use SAF Enterorise Capex.&#xD;&#xA;&#xD;&#xA;Store in cofig file/Assets" ClickBeforeMode="Single" DisplayName="Type Into 'Expenditure Organization'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="558,284.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[ExpenditureOrganization]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="For TES FTTB Rollout, we use SAF Enterorise Capex.&#xA;&#xA;Store in cofig file/Assets" ClickBeforeMode="Single" DisplayName="Type Into 'Expenditure Organization'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="558,284.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[ExpenditureOrganization]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?region=/oracle/apps/icx/por/req/webui/EditSingleLineRN&amp;bypassPageCounterIncr=Y&amp;isPopupRegion=Y&amp;popupLevel=0&amp;popupId=singlepopup&amp;retainAM=Y&amp;reqLineId=&amp;_ti=2011580170&amp;oapc=11&amp;oas=b7l3iMfwVRdmuNuNUwp0Pw.." CvElementArea="985, 709, 150, 20" CvType="InputBox" DesignTimeRectangle="987, 710, 121, 16" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'SAF Enterprise'" FullSelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='BillingTblRN:Content' tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='BillingTblRN:ExpenditureOrg:0' tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='BillingTblRN:Content' tag='TABLE' /&gt;&lt;webctrl id='BillingTblRN:ExpenditureOrg:0' type='text' tag='INPUT' class='x8' aaname='Expenditure Organization' /&gt;" Guid="62163682-c00a-47b0-b7c7-43a09cf54ed7" InformativeScreenshot="731004e6f10f63b12180018f6e33758a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit and Submit Requisition' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -843,7 +838,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="This is the accounting line for Technology capex projects.&#xD;&#xA;&#xD;&#xA;Store in config file/assets" ClickBeforeMode="Single" DisplayName="Type Into 'SFC Accounting Flexfield'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="558,301.3333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_30" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[SfcAccountingFlexField]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="This is the accounting line for Technology capex projects.&#xA;&#xA;Store in config file/assets" ClickBeforeMode="Single" DisplayName="Type Into 'SFC Accounting Flexfield'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="558,301.3333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_30" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[SfcAccountingFlexField]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?region=/oracle/apps/icx/por/req/webui/EditSingleLineRN&amp;bypassPageCounterIncr=Y&amp;isPopupRegion=Y&amp;popupLevel=0&amp;popupId=singlepopup&amp;retainAM=Y&amp;reqLineId=&amp;_ti=2011580170&amp;oapc=11&amp;oas=b7l3iMfwVRdmuNuNUwp0Pw.." CvElementArea="124, 706, 274, 22" CvType="InputBox" DesignTimeRectangle="126, 709, 244, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'01-0000-0000-52610-000-…'" FullSelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='BillingTblRN:Content' tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='BillingTblRN:ChargeAccountFlex_COMBINATION:0' tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='BillingTblRN:Content' tag='TABLE' /&gt;&lt;webctrl id='BillingTblRN:ChargeAccountFlex_COMBINATION:0' type='text' tag='INPUT' class='xeq xj5' aaname='SFC Accounting Flexfield' /&gt;" Guid="bee1df5d-195a-498f-ae2c-52e66632d411" InformativeScreenshot="27797f5b602e9492e1ed3332b8ff98b3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit and Submit Requisition' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -865,7 +860,7 @@
                   <uix:SearchedElement.Target>
                     <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?region=/oracle/apps/icx/por/req/webui/EditSingleLineRN&amp;bypassPageCounterIncr=Y&amp;isPopupRegion=Y&amp;popupLevel=0&amp;popupId=singlepopup&amp;retainAM=Y&amp;reqLineId=&amp;_ti=1474497867&amp;oapc=83&amp;oas=WCM33dX8_O3U_6q3YDFpwA.." CvElementArea="1173, 862, 51, 22" CvTextArea="1180, 867, 37, 14" CvTextArgument="Apply" CvType="Button" DesignTimeRectangle="1175, 864, 47, 19" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='PageActionsRL' tag='TABLE' /&gt;&lt;webctrl id='ApplyImg' tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='PageActionsRL' tag='TABLE' /&gt;&lt;webctrl id='ApplyImg' type='button' tag='BUTTON' class='x80' aaname='Apply: Alt + p' check:innerText='Apply' /&gt;" Guid="72912f02-d01f-4530-93f4-09cfc0cd929b" InformativeScreenshot="dc05b8402f77787232768215e59b8145.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Edit and Submit Requisition' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                           <uix:Target CvElementArea="1116, 862, 55, 22" CvTextArea="1123, 867, 43, 13" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1118, 864, 53, 19" ElementType="Button" FriendlyName="'Cancel'" FullSelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='PageActionsRL' tag='TABLE' /&gt;&lt;webctrl id='CancelImg' tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='iframesinglepopup' tag='IFRAME' /&gt;&lt;webctrl id='PageActionsRL' tag='TABLE' /&gt;&lt;webctrl id='CancelImg' type='button' tag='BUTTON' class='x80' aaname='Cancel: Alt + l' check:innerText='Cancel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAXCAYAAACxvufDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJASURBVFhH5ZhLUiJBEIb7BHovbPA4vA4wEbpVaeAYKKDrWcxKaBDFiZjNzCBCNy93rNLKqsymoKvQ8LFoWPxRXf1nZv1fwQac5XIJu679ghyMQvjl/4aftw+JF3IgTwwSjWEQwvzlJfFCDuSJQeINzEQBC4tNa1J85DFCTucLmC6EdmC1Qk6EuSuyQgbTGQSzuVxDw9qrpsFxnJXyN7G6bf1f5t9VwRXnu9VHa/92SIvqeQRLg3fH726ggKDHVeht1H67NEijL2SFHE2mZnUrcCSGHlX6Zp90JS+CVYQr+b4PpWO8jAqUIp890nVR60tDqcse9ZIXnf+OPFbI51AUCG2unQp+TdNw0TH7cm2KoAKki/uOCuHkroXfhwsZlPrJw4Cyj/b5Js5ZXQjOucxhXxEueT7XaTNseayQw2BilF92xQEunPtmX1dNBiPlmuLdA5xnVNiarGlCLvJ4Nnu61ut4nyqLnH4ZUvwc61P6FkhVw6H0gASZKYMva9fDq0sxQBJIdGEs7PsM5NM4NKtNQ717sz++j0Dact+ALAbKNt7wQmh7dIFtfV68bk1v5gk/AClUy4oD18JQCAqv/ALUxLMKzgG3Q24G1ufoz0+NgpyZbcR7TLJCDkbBVrU4PCvjQYv9licPVp4LKQmGfg/OomesrRNkfTW7rgC496xF77mXvJTXU+/prGhv0IchkyQr5P/ncSJ0cHgYfbo/Tk6NNYmHfI+MkPj768/fAfwbjhIv5DD+ntyLfwZ2WXsAuYRXM3rwCuWpQU0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
@@ -987,7 +982,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NGetText sap2010:Annotation.AnnotationText="This is a confirmation that the PR has been succsfully saved.&#xD;&#xA;&#xD;&#xA;The PR No will be useful to match against CM Quote for tracability" DisplayName="Get Text 'Confirmation'" sap:VirtualizedContainerService.HintSize="558,254.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" TextString="[PurchaseRequisitionNo]" Version="V3">
+            <uix:NGetText sap2010:Annotation.AnnotationText="This is a confirmation that the PR has been succsfully saved.&#xA;&#xA;The PR No will be useful to match against CM Quote for tracability" DisplayName="Get Text 'Confirmation'" sap:VirtualizedContainerService.HintSize="558,254.66666666666666" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" TextString="[PurchaseRequisitionNo]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?porMode=display&amp;page=/oracle/apps/icx/por/req/webui/EditSubmitPG&amp;_ti=2011580170&amp;retainAM=Y&amp;addBreadCrumb=N&amp;oapc=28&amp;oas=V9bAVZoVj9kp0gbZ5yxWRA.." CvTextArea="36, 391, 206, 14" CvType="AnyWordGroup" DesignTimeRectangle="37, 391, 205, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Requisition 786320'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;form&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table' idx='3' parentid='p_SwanPageLayout' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='p_SwanPageLayout' tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='x1' /&gt;" Guid="dc4f7344-d1f4-46ec-902c-d42c2180ddfc" InformativeScreenshot="a5a18c508ec39eb130f79c661a83b78a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Confirmation' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -1003,7 +998,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NGetText>
-            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="This should progress us to the next stage of PR submission. &#xD;&#xA;&#xD;&#xA;We still need to resolve why the Submit PR button is not available as at this stage" ClickType="Single" DisplayName="Click 'Continue with Checkout'" sap:VirtualizedContainerService.HintSize="558,254.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Version="V3">
+            <uix:NClick ActivateBefore="True" sap2010:Annotation.AnnotationText="This should progress us to the next stage of PR submission. &#xA;&#xA;We still need to resolve why the Submit PR button is not available as at this stage" ClickType="Single" DisplayName="Click 'Continue with Checkout'" sap:VirtualizedContainerService.HintSize="558,254.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?porMode=display&amp;page=/oracle/apps/icx/por/req/webui/EditSubmitPG&amp;_ti=2011580170&amp;retainAM=Y&amp;addBreadCrumb=N&amp;oapc=28&amp;oas=V9bAVZoVj9kp0gbZ5yxWRA.." CvElementArea="1105, 363, 153, 22" CvTextArea="1111, 367, 140, 12" CvTextArgument="Continue with Checkout" CvType="Button" DesignTimeRectangle="1106, 364, 151, 19" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Continue with Checkout'" FullSelectorArgument="&lt;webctrl parentid='p_SwanPageLayout' tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Continue with Checkout' tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='p_SwanPageLayout' tag='TABLE' /&gt;&lt;webctrl aaname='Continue with Checkout' type='submit' tag='BUTTON' class='x80' check:innerText='Continue with Checkout' /&gt;" Guid="a9e6479e-d20c-4842-9825-6b39bd8a36fe" InformativeScreenshot="07d57d8653b979c53bb9f3dd70539e1b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Confirmation' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>

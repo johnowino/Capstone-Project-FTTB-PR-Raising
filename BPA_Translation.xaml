@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="BPA_Translation" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="614,5004" sap2010:WorkflowViewState.IdRef="BPA_Translation_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="BPA_Translation" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="614,897.3333333333334" sap2010:WorkflowViewState.IdRef="BPA_Translation_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -89,7 +89,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="BPA_Translation" sap:VirtualizedContainerService.HintSize="548,4939.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="BPA_Translation" sap:VirtualizedContainerService.HintSize="450,832.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="CmQuoteDt" />
       <Variable x:TypeArguments="sd:DataTable" Name="BpaDt" />
@@ -98,11 +98,7 @@
       <Variable x:TypeArguments="x:String" Name="strFilter" />
       <Variable x:TypeArguments="sd:DataRow[]" Name="FilteredPRLinesDt" />
       <Variable x:TypeArguments="sd:DataTable" Name="BpaDetailsDt" />
-      <Variable x:TypeArguments="x:String" Name="Partner">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">EGYPRO</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="EGYPRO" Name="Partner" />
       <Variable x:TypeArguments="x:String" Name="strTestColumnUpdate" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -110,21 +106,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange AddHeaders="True" DataTable="[CmQuoteDt]" DisplayName="Read Range Workbook - CM Quote" sap:VirtualizedContainerService.HintSize="486,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="CmQuote" WorkbookPath="Data\Input\Test_Quote.xlsx">
+    <ui:ReadRange AddHeaders="True" DataTable="[CmQuoteDt]" DisplayName="Read Range Workbook - CM Quote" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="CmQuote" WorkbookPath="Data\Input\Test_Quote.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
         </InArgument>
       </ui:ReadRange.Range>
     </ui:ReadRange>
-    <ui:ReadRange AddHeaders="True" DataTable="[BpaDt]" DisplayName="Read Range Workbook - BPA" sap:VirtualizedContainerService.HintSize="486,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Bpa" WorkbookPath="Data\Input\Test_Quote.xlsx">
+    <ui:ReadRange AddHeaders="True" DataTable="[BpaDt]" DisplayName="Read Range Workbook - BPA" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Bpa" WorkbookPath="Data\Input\Test_Quote.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
           <Literal x:TypeArguments="x:String" Value="" />
         </InArgument>
       </ui:ReadRange.Range>
     </ui:ReadRange>
-    <ui:JoinDataTables DataTable1="[CmQuoteDt]" DataTable2="[BpaDt]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="486,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[PRLinesDt]">
+    <ui:JoinDataTables DataTable1="[CmQuoteDt]" DataTable2="[BpaDt]" DisplayName="Join Data Tables - CM Quote BoM and BPA" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[PRLinesDt]">
       <ui:JoinDataTables.Arguments>
         <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
           <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -138,113 +134,8 @@
         </scg:List>
       </ui:JoinDataTables.Arguments>
     </ui:JoinDataTables>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[BpaDetailsDt]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="486,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="BPADetails" WorkbookPath="Data\Input\Test_Quote.xlsx" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Partner" DataTable="[PRLinesDt]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="BPA" DataTable="[PRLinesDt]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Oracle_Supplier_Name" DataTable="[PRLinesDt]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Supplier_Site" DataTable="[PRLinesDt]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
-    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Source" DataTable="[PRLinesDt]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[PRLinesDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486,746.6666666666666" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
-      <ui:ForEachRow.Body>
-        <ActivityAction x:TypeArguments="sd:DataRow">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,556.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentRow(&quot;QTY&quot;).Equals(&quot;1&quot;)]" sap:VirtualizedContainerService.HintSize="410,469.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,285.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="Partner" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="334,198" sap2010:WorkflowViewState.IdRef="UpdateRowItem_2" Row="[CurrentRow]" Value="[Partner]" />
-                </Sequence>
-              </If.Then>
-              <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
-              </If.Else>
-            </If>
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEachRow.Body>
-    </ui:ForEachRow>
-    <ui:OutputDataTable DataTable="[PRLinesDt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strTestColumnUpdate]" />
-    <ui:WriteRange AddHeaders="True" DataTable="[PRLinesDt]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="486,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Shub" StartingCell="A1" WorkbookPath="Data\Input\Test_Quote.xlsx" />
-    <Assign sap:VirtualizedContainerService.HintSize="486,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="sd:DataRow[]">[FilteredPRLinesDt]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="sd:DataRow[]">[PRLinesDt.Select()]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:ForEach x:TypeArguments="sd:DataRow" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,1998" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[FilteredPRLinesDt]">
-      <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="sd:DataRow">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentItem" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1808" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="PrDescription" />
-              <Variable x:TypeArguments="x:String" Name="PrPrice" />
-              <Variable x:TypeArguments="x:String" Name="PrQuantity" />
-              <Variable x:TypeArguments="x:String" Name="PrSupplier" />
-              <Variable x:TypeArguments="x:String" Name="PrSupplierSite" />
-              <Variable x:TypeArguments="x:String" Name="PrSource" />
-              <Variable x:TypeArguments="x:String" Name="BpaNo" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Description" DisplayName="Get Row Item - PR Description" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[currentItem]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[PrDescription]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Price" DisplayName="Get Row Item - PR Price" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[currentItem]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[PrPrice]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="QTY" DisplayName="Get Row Item - PR Quantity" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[currentItem]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[PrQuantity]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Oracle_Supplier_Name" DisplayName="Get Row Item - PR Quantity" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[currentItem]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[PrSupplier]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Supplier_Site" DisplayName="Get Row Item - PR Quantity" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_5" Row="[currentItem]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[PrSupplierSite]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Source" DisplayName="Get Row Item - PR Quantity" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_6" Row="[currentItem]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[PrSource]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="BPA" DisplayName="Get Row Item - PR Quantity" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_7" Row="[currentItem]">
-              <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[BpaNo]</OutArgument>
-              </ui:GetRowItem.Value>
-            </ui:GetRowItem>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[PrDescription+&quot;, &quot;+PrPrice+&quot;, &quot;+PrQuantity]" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEach.Body>
-    </ui:ForEach>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[BpaDetailsDt]" DisplayName="Read Range Workbook - BPA Details" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="BPADetails" WorkbookPath="Data\Input\Test_Quote.xlsx" />
+    <ui:OutputDataTable DataTable="[PRLinesDt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="388,82" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strTestColumnUpdate]" />
+    <ui:WriteRange AddHeaders="True" DataTable="[PRLinesDt]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Shub" StartingCell="A1" WorkbookPath="Data\Input\Test_Quote.xlsx" />
   </Sequence>
 </Activity>
