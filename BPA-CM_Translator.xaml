@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>614,4953.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>614,5144</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Excel_Automation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Excel_Automation" sap:VirtualizedContainerService.HintSize="558,4888.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Excel_Automation" sap:VirtualizedContainerService.HintSize="558,5079.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="BpaDt" />
       <Variable x:TypeArguments="sd:DataTable" Name="CmQuoteDt" />
@@ -129,7 +129,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[BpaDetailsDt]" DisplayName="Read Range Workbook - BPA Details" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="BPADetails" WorkbookPath="Test_Quote.xlsx" />
+      <ui:ReadRange AddHeaders="True" DataTable="[BpaDetailsDt]" DisplayName="Read Range Workbook - BPA Details" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadRange_5" Password="{x:Null}" Range="{x:Null}" SheetName="BPADetails" WorkbookPath="Data\Input\Test_Quote.xlsx" />
       <Assign DisplayName="Assign - Short Partner Name" sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[ShortPartnerName]</OutArgument>
@@ -138,28 +138,28 @@
           <InArgument x:TypeArguments="x:String">[inPartner]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[BpaDetailsDt]" DisplayName="Lookup Data Table - BPA_Details - Partner Name" sap:VirtualizedContainerService.HintSize="434,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_6" LookupColumnName="Partner" LookupValue="[ShortPartnerName]" TargetColumnName="Oracle_Supplier_Name">
+      <ui:LookupDataTable DataTable="[BpaDetailsDt]" DisplayName="Lookup Data Table - BPA_Details - Partner Name" sap:VirtualizedContainerService.HintSize="434,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_6" LookupColumnIndex="{x:Null}" LookupColumnName="Partner" LookupDataColumn="{x:Null}" LookupValue="[ShortPartnerName]" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="Oracle_Supplier_Name" TargetDataColumn="{x:Null}">
         <ui:LookupDataTable.CellValue>
           <OutArgument x:TypeArguments="x:String">[OracleSupplierName]</OutArgument>
         </ui:LookupDataTable.CellValue>
       </ui:LookupDataTable>
       <ui:LogMessage DisplayName="Log Message - Oracle Supplier Name" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The Oracle Supplier Name is: &quot;+OracleSupplierName.ToString]" />
-      <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[BpaDetailsDt]" DisplayName="Lookup Data Table - BPA_Details - Supplier Site" sap:VirtualizedContainerService.HintSize="434,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_7" LookupColumnName="Partner" LookupValue="[ShortPartnerName]" TargetColumnName="Supplier_Site">
+      <ui:LookupDataTable DataTable="[BpaDetailsDt]" DisplayName="Lookup Data Table - BPA_Details - Supplier Site" sap:VirtualizedContainerService.HintSize="434,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_7" LookupColumnIndex="{x:Null}" LookupColumnName="Partner" LookupDataColumn="{x:Null}" LookupValue="[ShortPartnerName]" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="Supplier_Site" TargetDataColumn="{x:Null}">
         <ui:LookupDataTable.CellValue>
           <OutArgument x:TypeArguments="x:String">[OracleSupplierSite]</OutArgument>
         </ui:LookupDataTable.CellValue>
       </ui:LookupDataTable>
       <ui:LogMessage DisplayName="Log Message - Supplier Site" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Fatal]" Message="[&quot;The Supplier Site is: &quot;+OracleSupplierSite.ToString]" />
-      <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[BpaDetailsDt]" DisplayName="Lookup Data Table - BPA_Details - Source" sap:VirtualizedContainerService.HintSize="434,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_8" LookupColumnName="Partner" LookupValue="[ShortPartnerName]" TargetColumnName="Source">
+      <ui:LookupDataTable DataTable="[BpaDetailsDt]" DisplayName="Lookup Data Table - BPA_Details - Source" sap:VirtualizedContainerService.HintSize="434,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_8" LookupColumnIndex="{x:Null}" LookupColumnName="Partner" LookupDataColumn="{x:Null}" LookupValue="[ShortPartnerName]" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="Source" TargetDataColumn="{x:Null}">
         <ui:LookupDataTable.CellValue>
           <OutArgument x:TypeArguments="x:String">[OracleSource]</OutArgument>
         </ui:LookupDataTable.CellValue>
       </ui:LookupDataTable>
       <ui:LogMessage DisplayName="Log Message - Oracle Source" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The Oracle source is: &quot;+OracleSource.ToString]" />
     </Sequence>
-    <ui:ReadRange AddHeaders="True" DataTable="[CmQuoteDt]" DisplayName="Read Range Workbook - CMQuote" sap:VirtualizedContainerService.HintSize="496,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="[Nothing]" SheetName="CmQuote" WorkbookPath="Test_Quote.xlsx" />
-    <ui:ReadRange AddHeaders="True" DataTable="[BpaDt]" DisplayName="Read Range Workbook - BPA" sap:VirtualizedContainerService.HintSize="496,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="A1:D140" SheetName="BPA" WorkbookPath="Test_Quote.xlsx" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CmQuoteDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="496,2086" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ReadRange AddHeaders="True" DataTable="[CmQuoteDt]" DisplayName="Read Range Workbook - CMQuote" sap:VirtualizedContainerService.HintSize="496,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" Password="{x:Null}" Range="[Nothing]" SheetName="CmQuote" WorkbookPath="Data\Input\Test_Quote.xlsx" />
+    <ui:ReadRange AddHeaders="True" DataTable="[BpaDt]" DisplayName="Read Range Workbook - BPA" sap:VirtualizedContainerService.HintSize="496,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" Password="{x:Null}" Range="A1:D140" SheetName="BPA" WorkbookPath="Data\Input\Test_Quote.xlsx" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CmQuoteDt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="496,2086" sap2010:WorkflowViewState.IdRef="ForEachRow_1" MaxIterations="{x:Null}" Values="{x:Null}">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -171,14 +171,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[BpaDt]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="334,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_2" LookupColumnName="CM_Quote Description" LookupValue="[CurrentRow(&quot;Item Description&quot;).ToString]" TargetColumnName="Description">
+            <ui:LookupDataTable DataTable="[BpaDt]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="334,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_2" LookupColumnIndex="{x:Null}" LookupColumnName="CM_Quote Description" LookupDataColumn="{x:Null}" LookupValue="[CurrentRow(&quot;Item Description&quot;).ToString]" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="Description" TargetDataColumn="{x:Null}">
               <ui:LookupDataTable.CellValue>
                 <OutArgument x:TypeArguments="ui:GenericValue">[Op]</OutArgument>
               </ui:LookupDataTable.CellValue>
             </ui:LookupDataTable>
-            <ui:WriteCell Cell="F1" DisplayName="Write Cell Workbook - Column Name - Oracle Description" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="CmQuote" Text="Oracle Description" WorkbookPath="Test_Quote.xlsx" />
+            <ui:WriteCell Cell="F1" DisplayName="Write Cell Workbook - Column Name - Oracle Description" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_5" Password="{x:Null}" SheetName="CmQuote" Text="Oracle Description" WorkbookPath="Data\Input\Test_Quote.xlsx" />
             <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:WriteCell Cell="[&quot;F&quot;+(CmQuoteDt.Rows.IndexOf(currentrow)+2).ToString]" DisplayName="Write Cell Workbook - Oracle Description" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="CmQuote" Text="[Op]" WorkbookPath="Test_Quote.xlsx">
+            <ui:WriteCell Cell="[&quot;F&quot;+(CmQuoteDt.Rows.IndexOf(currentrow)+2).ToString]" DisplayName="Write Cell Workbook - Oracle Description" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" Password="{x:Null}" SheetName="CmQuote" Text="[Op]" WorkbookPath="Data\Input\Test_Quote.xlsx">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -186,8 +186,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:WriteCell>
-            <ui:WriteCell Cell="G1" DisplayName="Write Cell Workbook - Column Name - Oracle Supplier Name" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="CmQuote" Text="Oracle_Supplier_Name" WorkbookPath="Test_Quote.xlsx" />
-            <ui:WriteCell Cell="[&quot;G&quot;+(CmQuoteDt.Rows.IndexOf(currentrow)+2).ToString]" DisplayName="Write Cell Workbook - Oracle Supplier Name" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_9" SheetName="CmQuote" Text="[OracleSupplierName]" WorkbookPath="Test_Quote.xlsx">
+            <ui:WriteCell Cell="G1" DisplayName="Write Cell Workbook - Column Name - Oracle Supplier Name" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_6" Password="{x:Null}" SheetName="CmQuote" Text="Oracle_Supplier_Name" WorkbookPath="Data\Input\Test_Quote.xlsx" />
+            <ui:WriteCell Cell="[&quot;G&quot;+(CmQuoteDt.Rows.IndexOf(currentrow)+2).ToString]" DisplayName="Write Cell Workbook - Oracle Supplier Name" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_9" Password="{x:Null}" SheetName="CmQuote" Text="[OracleSupplierName]" WorkbookPath="Data\Input\Test_Quote.xlsx">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -195,8 +195,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:WriteCell>
-            <ui:WriteCell Cell="H1" DisplayName="Write Cell Workbook - Column Name - Supplier Delivery Site" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="CmQuote" Text="Supplier_Site" WorkbookPath="Test_Quote.xlsx" />
-            <ui:WriteCell Cell="[&quot;H&quot;+(CmQuoteDt.Rows.IndexOf(currentrow)+2).ToString]" DisplayName="Write Cell Workbook - Oracle Supplier Delivery Site" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_10" SheetName="CmQuote" Text="[OracleSupplierSite]" WorkbookPath="Test_Quote.xlsx">
+            <ui:WriteCell Cell="H1" DisplayName="Write Cell Workbook - Column Name - Supplier Delivery Site" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_7" Password="{x:Null}" SheetName="CmQuote" Text="Supplier_Site" WorkbookPath="Data\Input\Test_Quote.xlsx" />
+            <ui:WriteCell Cell="[&quot;H&quot;+(CmQuoteDt.Rows.IndexOf(currentrow)+2).ToString]" DisplayName="Write Cell Workbook - Oracle Supplier Delivery Site" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_10" Password="{x:Null}" SheetName="CmQuote" Text="[OracleSupplierSite]" WorkbookPath="Data\Input\Test_Quote.xlsx">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -204,8 +204,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:WriteCell>
-            <ui:WriteCell Cell="I1" DisplayName="Write Cell Workbook - Oracle Source - Column Name" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_8" SheetName="CmQuote" Text="Source" WorkbookPath="Test_Quote.xlsx" />
-            <ui:WriteCell Cell="[&quot;I&quot;+(CmQuoteDt.Rows.IndexOf(currentrow)+2).ToString]" DisplayName="Write Cell Workbook - Oracle Supplier Delivery Site" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_11" SheetName="CmQuote" Text="[OracleSource]" WorkbookPath="Test_Quote.xlsx">
+            <ui:WriteCell Cell="I1" DisplayName="Write Cell Workbook - Oracle Source - Column Name" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_8" Password="{x:Null}" SheetName="CmQuote" Text="Source" WorkbookPath="Data\Input\Test_Quote.xlsx" />
+            <ui:WriteCell Cell="[&quot;I&quot;+(CmQuoteDt.Rows.IndexOf(currentrow)+2).ToString]" DisplayName="Write Cell Workbook - Oracle Supplier Delivery Site" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_11" Password="{x:Null}" SheetName="CmQuote" Text="[OracleSource]" WorkbookPath="Data\Input\Test_Quote.xlsx">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -213,22 +213,29 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:WriteCell>
-            <ui:ReadRange AddHeaders="True" DataTable="[ShubDt]" DisplayName="Read Range Workbook - Updated CMQuote" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" Range="[Nothing]" SheetName="CmQuote" WorkbookPath="Test_Quote.xlsx" />
+            <ui:ReadRange AddHeaders="True" DataTable="[ShubDt]" DisplayName="Read Range Workbook - Updated CMQuote" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadRange_3" Password="{x:Null}" Range="[Nothing]" SheetName="CmQuote" WorkbookPath="Data\Input\Test_Quote.xlsx" />
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:WriteRange AddHeaders="True" DataTable="[ShubDt]" DisplayName="Write Range Workbook - SHub" sap:VirtualizedContainerService.HintSize="496,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Shub" StartingCell="[Nothing]" WorkbookPath="Test_Quote.xlsx" />
+    <ui:WriteRange AddHeaders="True" DataTable="[ShubDt]" DisplayName="Write Range Workbook - SHub" sap:VirtualizedContainerService.HintSize="496,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" Password="{x:Null}" SheetName="Shub" StartingCell="[Nothing]" WorkbookPath="Data\Input\Test_Quote.xlsx" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;This is Project Name from Project Log Translator: &quot;+in_ProjectName]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Entry.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="496,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data Entry.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="inShub">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ShubDt" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_FinalProjectName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_ProjectName" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="496,306" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Entry.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data Entry.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="inShub">[ShubDt]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FinalProjectName">[in_ProjectName]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
