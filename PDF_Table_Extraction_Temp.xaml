@@ -324,7 +324,7 @@
                 <OutArgument x:TypeArguments="x:String">[PartnerShort]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[Partner.split(" "c)(1)]</InArgument>
+                <InArgument x:TypeArguments="x:String">[Partner.split(" "c)(1).ToUpper.Trim]</InArgument>
               </Assign.Value>
             </Assign>
             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;The Short Partner Name is - &quot;+ PartnerShort]" />
